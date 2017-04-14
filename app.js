@@ -28,4 +28,11 @@ server.register(githubWebhooksPlugin, function (err) {
       }
     }
   ]);
+
+  server.start(err => {
+    if (err) {
+      throw err;
+    }
+    console.log('started on port ' + process.env.PORT);
+  });
 });
