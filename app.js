@@ -14,7 +14,7 @@ server.register(githubWebhooksPlugin, function (err) {
   server.route([
     {
       method: 'POST',
-      path: '/webhooks/github',
+      path: '/',
       config: {
         auth: {
           strategies: ['githubwebhook'],
