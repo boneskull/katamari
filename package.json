@@ -1,0 +1,16 @@
+{
+  "name": "katamari",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/boneskull/katamari",
+  "author": "Christopher Hiller <boneskull@boneskull.com> (https://boneskull.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.1.1",
+    "hapi-github-webhooks": "^1.0.3",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  }
+}
