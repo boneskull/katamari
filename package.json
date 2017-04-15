@@ -6,11 +6,22 @@
   "author": "Christopher Hiller <boneskull@boneskull.com> (https://boneskull.com/)",
   "license": "MIT",
   "dependencies": {
+    "chokidar": "^1.6.1",
+    "concurrently": "^3.4.0",
+    "debug": "^2.6.3",
+    "dotenv": "^4.0.0",
     "hapi": "^16.1.1",
     "hapi-github-webhooks": "^1.0.3",
-    "nodemon": "^1.11.0"
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0",
+    "require-all": "^2.2.0",
+    "simple-git": "^1.70.0"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "concurrently 'nodemon ./server/katamari.js' \"bundle exec jekyll build -I -s $npm_package_config_site_dir -d $npm_package_config_output_dir\" 'nodemon ./jobs/deploy-changes.js'"
+  },
+  "config": {
+    "site_dir": "site",
+    "output_dir": "docs"
   }
 }
